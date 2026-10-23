@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LAEL IQ | الفئات</title>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box} body{margin:0;background:#080808;color:#fff;font-family:"Cairo",sans-serif}.sidebar{position:fixed;right:0;top:0;width:270px;height:100vh;background:#111;border-left:1px solid #292929;padding:30px 20px}.logo{text-align:center;margin-bottom:40px}.logo h1{margin:0;color:#d4af37;font-size:34px;font-weight:900;letter-spacing:3px}.logo span{display:block;color:#777;font-size:10px;letter-spacing:1.5px}.admin-label{text-align:center;color:#aaa;font-size:13px;margin-bottom:25px}.menu{display:flex;flex-direction:column;gap:8px}.menu a{display:block;text-decoration:none;color:#aaa;padding:14px 16px;border-radius:10px;font-size:14px;font-weight:700}.menu a:hover,.menu a.active{background:rgba(212,175,55,.1);color:#d4af37}.logout{position:absolute;bottom:25px;right:20px;width:calc(100% - 40px);padding:13px;border:1px solid #542222;background:#1a0c0c;color:#ff7777;border-radius:10px;font-family:inherit;font-weight:700;cursor:pointer}.main{margin-right:270px;padding:35px}.top{display:flex;justify-content:space-between;align-items:center;gap:20px;margin-bottom:25px}.top h2{margin:0;font-size:28px}.top p{margin:5px 0 0;color:#777;font-size:13px}.search{width:min(360px,100%);height:45px;background:#111;border:1px solid #333;border-radius:9px;color:#fff;padding:0 14px;outline:none}.search:focus{border-color:#d4af37}.panel{background:#111;border:1px solid #252525;border-radius:16px;padding:25px;overflow:auto}.toolbar{display:flex;justify-content:space-between;align-items:center;gap:15px;margin-bottom:20px}.add{border:0;background:#d4af37;color:#111;padding:10px 18px;border-radius:8px;font-family:inherit;font-weight:800;cursor:pointer}.table{width:100%;border-collapse:collapse;min-width:850px}.table th{color:#777;font-size:12px;text-align:right;padding:14px 10px;border-bottom:1px solid #292929}.table td{padding:14px 10px;border-bottom:1px solid #202020;font-size:13px}.name{font-weight:800}.muted{color:#777;font-size:11px}.price{color:#d4af37;font-weight:800}.badge{display:inline-block;padding:5px 9px;border-radius:6px;background:rgba(50,180,100,.1);color:#6be09a;font-size:11px}.badge.out{background:rgba(200,50,50,.1);color:#ff7777}.actions{display:flex;gap:7px}.action{border:1px solid #333;background:#171717;color:#aaa;min-width:38px;height:36px;border-radius:7px;cursor:pointer}.action:hover{color:#d4af37;border-color:#d4af37}.empty{text-align:center;padding:60px;color:#777}@media(max-width:700px){.sidebar{position:relative;width:100%;height:auto;border-left:0;border-bottom:1px solid #292929}.logout{position:static;width:100%;margin-top:20px}.main{margin-right:0;padding:20px}.top{align-items:stretch;flex-direction:column}.panel{padding:15px}}
+
+.panel-grid{display:grid;grid-template-columns:1fr 2fr;gap:22px;align-items:start}
+.panel h3{margin:0 0 22px;font-size:18px}
+.field{margin-bottom:18px}.field:last-child{margin-bottom:0}
+.field label{display:block;color:#ccc;font-size:13px;font-weight:700;margin-bottom:8px}
+.field input{width:100%;height:48px;background:#0b0b0b;border:1px solid #333;border-radius:9px;color:#fff;padding:12px 14px;outline:none;font-family:inherit;font-size:14px}
+.field input:focus{border-color:#d4af37;box-shadow:0 0 0 3px rgba(212,175,55,.07)}
+.save-area{display:flex;justify-content:flex-end;gap:12px}
+.cancel,.save{padding:13px 25px;border-radius:9px;font-family:inherit;font-weight:800;cursor:pointer}
+.cancel{border:1px solid #333;background:#171717;color:#aaa}
+.save{border:0;background:#d4af37;color:#111}
+.success{display:none;margin-top:18px;padding:12px;border-radius:9px;background:rgba(50,180,100,.1);border:1px solid rgba(50,180,100,.25);color:#6be09a;font-size:13px}
+.cat-icon{font-size:22px}
+.table.cats{min-width:560px}
+@media(max-width:1000px){.sidebar{width:220px}.main{margin-right:220px}.panel-grid{grid-template-columns:1fr}}
+</style>
+<link rel="stylesheet" href="../assets/css/glow.css"></head>
+<body>
+<aside class="sidebar">
+<div class="logo"><h1>LAEL IQ</h1><span>FROM IRAQ TO THE WORLD</span></div>
+<div class="admin-label">لوحة تحكم الإدارة</div>
+<nav class="menu">
+<a href="index.html">📊 لوحة التحكم</a>
+<a href="products.html">📦 المنتجات</a>
+<a href="product.html">➕ إضافة منتج</a>
+<a href="categories.html" class="active">🗂️ الفئات</a>
+<a href="orders.html">🛒 الطلبات</a>
+<a href="customers.html">👥 العملاء</a>
+<a href="offers.html">🏷️ العروض والخصومات</a>
+<a href="inventory.html">📊 المخزون</a>
+<a href="settings.html">⚙️ الإعدادات</a>
+<a href="../public/index.html">🏪 المتجر</a>
+</nav>
+<button class="logout" id="logoutButton">تسجيل الخروج</button>
+</aside>
+<main class="main">
+<div class="top"><div><h2>الفئات</h2><p>أضف فئات جديدة للمنتجات، وكل فئة ترتبط بالمنتجات المضافة ضمنها</p></div></div>
+<div class="panel-grid">
+<section class="panel" style="overflow:visible">
+<h3 id="formTitle">إضافة فئة جديدة</h3>
+<form id="categoryForm">
+<div class="field"><label>اسم الفئة</label><input type="text" id="catName" placeholder="مثال: الطابعات" required maxlength="40"></div>
+<div class="field"><label>أيقونة الفئة (إيموجي)</label><input type="text" id="catIcon" placeholder="🖨️" maxlength="4"></div>
+<div class="field"><label>وصف قصير</label><input type="text" id="catDesc" placeholder="مثال: طابعات وأحبار" maxlength="60"></div>
+<div class="save-area"><button type="button" class="cancel" id="cancelEdit" style="display:none">إلغاء</button><button type="submit" class="save" id="saveBtn">حفظ الفئة</button></div>
+<div class="success" id="successMessage"></div>
+</form>
+</section>
+<section class="panel">
+<div class="toolbar"><h3 style="margin:0">كل الفئات</h3></div>
+<table class="table cats"><thead><tr><th>الفئة</th><th>عدد المنتجات</th><th>الإجراءات</th></tr></thead><tbody id="categoriesTable"></tbody></table>
+</section>
+</div>
+</main>
+<script>
+if(sessionStorage.getItem("laelAdminLoggedIn")!=="true") location.replace("login.html");
+const CAT_KEY="laelCategories", PROD_KEY="laelProducts";
+const table=document.getElementById("categoriesTable"), form=document.getElementById("categoryForm");
+const nameEl=document.getElementById("catName"), iconEl=document.getElementById("catIcon"), descEl=document.getElementById("catDesc");
+let editingId=null;
+function read(key){try{const x=JSON.parse(localStorage.getItem(key)||"[]");return Array.isArray(x)?x:[]}catch(e){return[]}}
+function esc(v){return String(v??"").replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;").replace(/'/g,"&#039;")}
+function msg(t){const m=document.getElementById("successMessage");m.textContent=t;m.style.display="block";setTimeout(()=>m.style.display="none",2500)}
+function render(){
+  const cats=read(CAT_KEY), products=read(PROD_KEY);
+  if(!cats.length){table.innerHTML='<tr><td colspan="3" class="empty">لا توجد فئات مضافة بعد.</td></tr>';return}
+  table.innerHTML=cats.map(function(c){
+    const n=products.filter(p=>String(p.category||"")===c.name).length;
+    return `<tr><td><div class="name"><span class="cat-icon">${esc(c.icon||"📦")}</span> ${esc(c.name)}</div><div class="muted">${esc(c.desc||"")}</div></td><td class="price">${n}</td><td><div class="actions"><button class="action" title="تعديل" onclick="editCat('${esc(c.id)}')">✏️</button><button class="action" title="حذف" onclick="removeCat('${esc(c.id)}')">🗑</button></div></td></tr>`;
+  }).join("");
+}
+function resetForm(){editingId=null;form.reset();document.getElementById("formTitle").textContent="إضافة فئة جديدة";document.getElementById("saveBtn").textContent="حفظ الفئة";document.getElementById("cancelEdit").style.display="none"}
+function editCat(id){const c=read(CAT_KEY).find(x=>x.id===id);if(!c)return;editingId=id;nameEl.value=c.name;iconEl.value=c.icon||"";descEl.value=c.desc||"";document.getElementById("formTitle").textContent="تعديل الفئة";document.getElementById("saveBtn").textContent="حفظ التعديلات";document.getElementById("cancelEdit").style.display="inline-block";window.scrollTo({top:0,behavior:"smooth"})}
+function removeCat(id){
+  const cats=read(CAT_KEY), c=cats.find(x=>x.id===id); if(!c) return;
+  const n=read(PROD_KEY).filter(p=>String(p.category||"")===c.name).length;
+  if(!confirm(n?`هذه الفئة فيها ${n} منتج. المنتجات راح تبقى بدون فئة. هل تريد الحذف؟`:"هل أنت متأكد من حذف هذه الفئة؟")) return;
+  if(n){const prods=read(PROD_KEY).map(p=>String(p.category||"")===c.name?Object.assign({},p,{category:""}):p);localStorage.setItem(PROD_KEY,JSON.stringify(prods))}
+  localStorage.setItem(CAT_KEY,JSON.stringify(cats.filter(x=>x.id!==id)));
+  if(editingId===id) resetForm();
+  render();
+}
+form.addEventListener("submit",function(e){
+  e.preventDefault();
+  const name=nameEl.value.trim(); if(!name) return;
+  const builtIn=["أجهزة اللابتوب","تجميعات PC","كروت الشاشة","الشاشات","الإكسسوارات","الشبكات"];
+  const cats=read(CAT_KEY);
+  const dup=builtIn.includes(name)||cats.some(c=>c.name===name&&c.id!==editingId);
+  if(dup){alert("هذه الفئة موجودة مسبقاً.");return}
+  if(editingId){
+    const old=cats.find(c=>c.id===editingId);
+    if(old&&old.name!==name){const prods=read(PROD_KEY).map(p=>String(p.category||"")===old.name?Object.assign({},p,{category:name}):p);localStorage.setItem(PROD_KEY,JSON.stringify(prods))}
+    cats.forEach(c=>{if(c.id===editingId){c.name=name;c.icon=iconEl.value.trim()||"📦";c.desc=descEl.value.trim()}});
+    msg("تم تعديل الفئة بنجاح.");
+  }else{
+    cats.push({id:"CAT-"+Date.now(),name:name,icon:iconEl.value.trim()||"📦",desc:descEl.value.trim(),createdAt:new Date().toISOString()});
+    msg("تمت إضافة الفئة بنجاح، وصارت متاحة عند إضافة المنتجات وتظهر في المتجر.");
+  }
+  localStorage.setItem(CAT_KEY,JSON.stringify(cats));
+  resetForm(); render();
+});
+document.getElementById("cancelEdit").addEventListener("click",resetForm);
+document.getElementById("logoutButton").addEventListener("click",()=>{sessionStorage.removeItem("laelAdminLoggedIn");location.replace("login.html")});
+render();
+</script>
+</body>
+</html>

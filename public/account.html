@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>LAEL IQ | حسابي</title>
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="../assets/css/style.css">
+
+    <link rel="stylesheet" href="../assets/css/auth.css">
+
+<link rel="stylesheet" href="../assets/css/glow.css"></head>
+
+
+<body>
+
+<header class="navbar">
+
+    <div class="logo">
+
+        <h1>LAEL IQ</h1>
+
+        <span>
+            FROM IRAQ TO THE WORLD
+        </span>
+
+    </div>
+
+
+    <nav class="nav-links">
+
+        <a href="index.html">
+            الرئيسية
+        </a>
+
+        <a href="index.html#products">
+            المتجر
+        </a>
+
+        <a href="index.html#categories">
+            الفئات
+        </a>
+
+        <a href="favorites.html">
+            المفضلة
+        </a>
+
+        <a href="cart.html">
+            السلة
+        </a>
+
+    </nav>
+
+
+    <div class="nav-actions">
+
+        <a class="account-link" id="accountLink" href="account.html">
+            <span class="account-icon" aria-hidden="true">👤</span>
+            <span id="accountText">حسابي</span>
+        </a>
+
+        <a class="icon-btn" href="favorites.html" aria-label="المفضلة">
+            ♡
+            <span class="favorite-count" id="favoriteCount">0</span>
+        </a>
+
+
+        <a class="icon-btn" href="cart.html" aria-label="السلة">
+            🛒
+            <span class="cart-count" id="cartCount">0</span>
+        </a>
+
+    </div>
+
+</header>
+
+
+<main class="account-page">
+
+
+    <!-- LOGIN / REGISTER -->
+
+    <section
+        id="authSection"
+        class="auth-box"
+    >
+
+        <div class="auth-heading">
+
+            <span>LAEL IQ</span>
+
+            <h1>
+                حسابك في
+                <strong>LAEL IQ</strong>
+            </h1>
+
+            <p>
+                سجل دخولك أو أنشئ حسابًا جديدًا
+            </p>
+
+        </div>
+
+
+        <div class="auth-tabs">
+
+            <button
+                id="loginTab"
+                class="auth-tab active"
+                type="button"
+            >
+                تسجيل الدخول
+            </button>
+
+            <button
+                id="registerTab"
+                class="auth-tab"
+                type="button"
+            >
+                إنشاء حساب
+            </button>
+
+        </div>
+
+
+        <!-- LOGIN -->
+
+        <form
+            id="loginForm"
+            class="auth-form"
+        >
+
+            <div class="auth-group">
+
+                <label>
+                    البريد الإلكتروني
+                </label>
+
+                <input
+                    id="loginEmail"
+                    type="email"
+                    placeholder="example@email.com"
+                    autocomplete="email"
+                    required
+                >
+
+            </div>
+
+
+            <div class="auth-group">
+
+                <label>
+                    كلمة المرور
+                </label>
+
+                <input
+                    id="loginPassword"
+                    type="password"
+                    placeholder="••••••••"
+                    autocomplete="current-password"
+                    required
+                >
+
+            </div>
+
+
+            <button
+                class="auth-submit"
+                type="submit"
+            >
+                تسجيل الدخول
+            </button>
+
+
+            <p
+                id="loginMessage"
+                class="auth-message"
+            ></p>
+
+        </form>
+
+
+        <!-- REGISTER -->
+
+        <form
+            id="registerForm"
+            class="auth-form hidden"
+        >
+
+            <div class="auth-group">
+
+                <label>
+                    الاسم الكامل
+                </label>
+
+                <input
+                    id="registerName"
+                    type="text"
+                    placeholder="محمد بهاء"
+                    autocomplete="name"
+                    required
+                >
+
+            </div>
+
+
+            <div class="auth-group">
+
+                <label>
+                    رقم الهاتف
+                </label>
+
+                <input
+                    id="registerPhone"
+                    type="tel"
+                    placeholder="07XXXXXXXXX"
+                    autocomplete="tel"
+                    required
+                >
+
+            </div>
+
+
+            <div class="auth-group">
+
+                <label>
+                    البريد الإلكتروني
+                </label>
+
+                <input
+                    id="registerEmail"
+                    type="email"
+                    placeholder="example@email.com"
+                    autocomplete="email"
+                    required
+                >
+
+            </div>
+
+
+            <div class="auth-group">
+
+                <label>
+                    كلمة المرور
+                </label>
+
+                <input
+                    id="registerPassword"
+                    type="password"
+                    placeholder="••••••••"
+                    minlength="6"
+                    autocomplete="new-password"
+                    required
+                >
+
+            </div>
+
+
+            <div class="auth-group">
+
+                <label>
+                    تأكيد كلمة المرور
+                </label>
+
+                <input
+                    id="registerPasswordConfirm"
+                    type="password"
+                    placeholder="••••••••"
+                    minlength="6"
+                    autocomplete="new-password"
+                    required
+                >
+
+            </div>
+
+
+            <button
+                class="auth-submit"
+                type="submit"
+            >
+                إنشاء الحساب
+            </button>
+
+
+            <p
+                id="registerMessage"
+                class="auth-message"
+            ></p>
+
+        </form>
+
+    </section>
+
+
+    <!-- ACCOUNT -->
+
+    <section
+        id="accountSection"
+        class="account-box hidden"
+    >
+
+        <div class="account-header">
+
+            <div class="account-avatar">
+                <span id="accountInitial">
+                    م
+                </span>
+            </div>
+
+
+            <div>
+
+                <span>
+                    مرحبًا بك
+                </span>
+
+                <h1 id="accountName">
+                    المستخدم
+                </h1>
+
+                <p id="accountEmail">
+                    email@example.com
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="account-profile-editor">
+
+            <div class="account-editor-head">
+                <div>
+                    <strong>معلومات الحساب</strong>
+                    <p>حدّث بياناتك الشخصية متى ما تريد.</p>
+                </div>
+                <button type="button" id="editAccountButton" class="account-edit-button">تعديل</button>
+            </div>
+
+            <form id="accountEditForm" class="account-edit-form hidden">
+                <div class="account-edit-grid">
+                    <label>الاسم الكامل<input id="editName" type="text" required></label>
+                    <label>رقم الهاتف<input id="editPhone" type="tel" required></label>
+                    <label>البريد الإلكتروني<input id="editEmail" type="email" required></label>
+                    <label>كلمة مرور جديدة <small>(اختياري)</small><input id="editPassword" type="password" minlength="6" placeholder="اتركها فارغة إذا لا تريد تغييرها"></label>
+                </div>
+                <div class="account-edit-actions">
+                    <button type="submit" class="auth-submit">حفظ التغييرات</button>
+                    <button type="button" id="cancelAccountEdit" class="account-cancel-button">إلغاء</button>
+                </div>
+                <p id="accountEditMessage" class="auth-message"></p>
+            </form>
+
+        </div>
+
+
+        <div class="account-grid">
+
+
+            <div class="account-card">
+
+                <span class="account-card-icon">
+                    👤
+                </span>
+
+                <div>
+
+                    <strong>
+                        معلومات الحساب
+                    </strong>
+
+                    <p>
+                        الاسم ورقم الهاتف والبريد الإلكتروني
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div
+                class="account-card"
+                onclick="location.href='favorites.html'"
+            >
+
+                <span class="account-card-icon">
+                    ♡
+                </span>
+
+                <div>
+
+                    <strong>
+                        المفضلة
+                    </strong>
+
+                    <p>
+                        المنتجات التي حفظتها
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div
+                class="account-card"
+                onclick="location.href='cart.html'"
+            >
+
+                <span class="account-card-icon">
+                    🛒
+                </span>
+
+                <div>
+
+                    <strong>
+                        سلة التسوق
+                    </strong>
+
+                    <p>
+                        المنتجات الموجودة في سلتك
+                    </p>
+
+                </div>
+
+            </div>
+
+
+          <div
+    class="account-card"
+    onclick="location.href='orders.html'"
+>
+                <span class="account-card-icon">
+                    📦
+                </span>
+
+                <div>
+
+                    <strong>
+                        طلباتي
+                    </strong>
+
+                    <p>
+                        عرض جميع الطلبات وحالاتها وتفاصيلها
+                    </p>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+        <button
+            id="logoutButton"
+            class="logout-button"
+            type="button"
+        >
+            تسجيل الخروج
+        </button>
+
+    </section>
+
+
+</main>
+
+
+<footer>
+
+    <div class="copyright">
+
+        © 2026 جميع الحقوق محفوظة لـ LAEL IQ
+        — From Iraq To The World
+
+    </div>
+
+</footer>
+
+
+<script src="../assets/js/auth.js"></script>
+<script src="../assets/js/navbar.js"></script>
+
+</body>
+
+</html>

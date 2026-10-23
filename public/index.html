@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>LAEL IQ | From Iraq To The World</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="../assets/css/style.css">
+<link rel="stylesheet" href="../assets/css/glow.css"></head>
+
+<body>
+
+<!-- TOP BAR -->
+
+<div class="topbar">
+
+    <div>🇮🇶 From Iraq To The World</div>
+
+    <div>
+        الشحن مجاني للطلبات فوق <strong>350,000 IQD</strong>
+    </div>
+
+    <div>
+        +964 770 123 4567
+        &nbsp; | &nbsp;
+        support@lael-iq.com
+    </div>
+
+</div>
+
+
+<!-- NAVBAR -->
+
+<header class="navbar">
+
+    <div class="logo">
+
+        <h1>LAEL IQ</h1>
+
+        <span>
+            FROM IRAQ TO THE WORLD
+        </span>
+
+    </div>
+
+
+    <nav class="nav-links">
+
+        <a href="index.html" class="active">
+            الرئيسية
+        </a>
+
+        <a href="#products">
+            المتجر
+        </a>
+
+        <a href="#categories">
+            أجهزة PC
+        </a>
+
+        <a href="#products" id="offersNavLink">
+            العروض
+        </a>
+
+        <a href="#categories">
+            العلامات
+        </a>
+
+        <a href="#contact">
+            تواصل معنا
+        </a>
+
+    </nav>
+
+
+    <div class="nav-actions">
+
+        <!-- CART -->
+
+        <a
+            href="cart.html"
+            class="icon-btn"
+            aria-label="عربة التسوق"
+        >
+
+            🛒
+
+            <span
+                class="cart-count"
+                id="cartCount"
+            >
+                0
+            </span>
+
+        </a>
+
+
+        <!-- FAVORITES -->
+
+        <a
+            href="favorites.html"
+            class="icon-btn"
+            aria-label="المفضلة"
+        >
+
+            ♡
+
+            <span
+                class="favorite-count"
+                id="favoriteCount"
+            >
+                0
+            </span>
+
+        </a>
+
+
+        <!-- ACCOUNT -->
+
+        <a
+            href="account.html"
+            class="account-link"
+            id="accountLink"
+            aria-label="الحساب"
+        >
+
+            <span class="account-icon" aria-hidden="true">👤</span>
+
+            <span id="accountText">
+                تسجيل الدخول
+            </span>
+
+        </a>
+
+
+        <!-- SEARCH -->
+
+        <div class="lael-search-wrap" id="laelSearchWrap">
+
+            <input
+                type="search"
+                id="searchInput"
+                class="search"
+                placeholder="إبحث عن منتج..."
+                autocomplete="off"
+                aria-label="البحث عن منتج"
+            >
+
+            <button
+                type="button"
+                id="searchButton"
+                class="search-icon"
+                aria-label="بحث"
+            >
+                <span aria-hidden="true"></span>
+            </button>
+
+            <div
+                id="searchSuggestions"
+                class="search-suggestions"
+                role="listbox"
+                aria-label="اقتراحات البحث"
+            ></div>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<!-- HERO -->
+
+<section class="hero" id="hero">
+
+    <div class="hero-image">
+        <img src="../assets/images/hero.jpg" alt="LAEL IQ Technology">
+    </div>
+
+    <div class="hero-content">
+
+        <span class="badge">FROM IRAQ TO THE WORLD</span>
+
+        <h2>
+            TECHNOLOGY
+            <span>CRAFTED LIKE<br>AN EMPIRE</span>
+        </h2>
+
+        <p>
+            أجهزة وإكسسوارات وتقنيات متطورة مصممة للمحترفين، لعشاق الأداء، وصنّاع المستقبل.
+        </p>
+
+        <div class="buttons">
+            <a href="#products" class="btn btn-gold">تسوق الآن</a>
+            <a href="#categories" class="btn btn-outline" id="exploreButton">استكشف المزيد</a>
+        </div>
+
+        <div class="hero-features">
+            <div class="hero-feature">
+                <strong>ضمان حقيقي</strong>
+                <small>نضمن لك راحة البال</small>
+                <span>♟</span>
+            </div>
+            <div class="hero-feature">
+                <strong>شحن سريع</strong>
+                <small>إلى جميع المحافظات</small>
+                <span>🚚</span>
+            </div>
+            <div class="hero-feature">
+                <strong>24/7 دعم</strong>
+                <small>على مدار الساعة</small>
+                <span>◷</span>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- CATEGORIES -->
+
+<section id="categories">
+
+    <div class="section-title">
+
+        <span></span>
+
+        <h3>
+            تسوق <strong>حسب الفئة</strong>
+        </h3>
+
+    </div>
+
+
+    <div class="categories">
+
+        <div class="category" data-filter="laptop">
+            <div class="category-icon">💻</div>
+            <h4>أجهزة اللابتوب</h4>
+            <p>تشكيلة واسعة من اللابتوبات</p>
+        </div>
+
+        <div class="category" data-filter="pc">
+            <div class="category-icon">🖥️</div>
+            <h4>تجميعات PC</h4>
+            <p>أعلى أداء للألعاب والعمل</p>
+        </div>
+
+        <div class="category" data-filter="gpu">
+            <div class="category-icon">🎮</div>
+            <h4>كروت الشاشة</h4>
+            <p>NVIDIA / AMD</p>
+        </div>
+
+        <div class="category" data-filter="monitor">
+            <div class="category-icon">🖥</div>
+            <h4>الشاشات</h4>
+            <p>Gaming & Professional</p>
+        </div>
+
+        <div class="category" data-filter="accessories">
+            <div class="category-icon">🎧</div>
+            <h4>الإكسسوارات</h4>
+            <p>كل ما تحتاجه للألعاب والعمل</p>
+        </div>
+
+        <div class="category" data-filter="network">
+            <div class="category-icon">📡</div>
+            <h4>الشبكات</h4>
+            <p>راوتر وأجهزة شبكات</p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- PRODUCTS -->
+
+
+
+
+<!-- PRODUCTS -->
+
+<section id="products">
+
+    <div class="section-title">
+
+        <span></span>
+
+        <h3>
+            <strong>منتجات</strong> مميزة
+        </h3>
+
+    </div>
+
+
+    <div
+        class="products"
+        id="productsContainer"
+    >
+
+        <!-- المنتجات الثابتة -->
+
+        <div
+            class="product"
+            data-name="ASUS ROG Strix G16"
+            data-category="laptop"
+            data-price="1850000"
+        >
+
+            <label>جديد</label>
+
+            <div class="product-image">
+                💻
+            </div>
+
+            <h4>
+                ASUS ROG Strix G16
+            </h4>
+
+            <p>
+                i7-13650HX / RTX 4060
+            </p>
+
+            <div class="price">
+                1,850,000 IQD
+            </div>
+
+            <div class="product-actions">
+
+                <button
+                    class="favorite-btn"
+                    type="button"
+                >
+                    ♡
+                </button>
+
+                <button
+                    class="add-cart"
+                    type="button"
+                >
+                    🛒
+                </button>
+
+                <button
+                    class="product-open"
+                    type="button"
+                >
+                    ↗
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <div
+            class="product"
+            data-name="Gaming PC Build"
+            data-category="pc"
+            data-price="1550000"
+        >
+
+            <label>خصم</label>
+
+            <div class="product-image">
+                🖥️
+            </div>
+
+            <h4>
+                Gaming PC Build
+            </h4>
+
+            <p>
+                i5-13400F / RTX 4060
+            </p>
+
+            <div class="price">
+                1,550,000 IQD
+            </div>
+
+            <div class="product-actions">
+
+                <button
+                    class="favorite-btn"
+                    type="button"
+                >
+                    ♡
+                </button>
+
+                <button
+                    class="add-cart"
+                    type="button"
+                >
+                    🛒
+                </button>
+
+                <button
+                    class="product-open"
+                    type="button"
+                >
+                    ↗
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <div
+            class="product"
+            data-name="MSI GeForce RTX 4070"
+            data-category="gpu"
+            data-price="1250000"
+        >
+
+            <div class="product-image">
+                🎮
+            </div>
+
+            <h4>
+                MSI GeForce RTX 4070
+            </h4>
+
+            <p>
+                12GB GDDR6X
+            </p>
+
+            <div class="price">
+                1,250,000 IQD
+            </div>
+
+            <div class="product-actions">
+
+                <button
+                    class="favorite-btn"
+                    type="button"
+                >
+                    ♡
+                </button>
+
+                <button
+                    class="add-cart"
+                    type="button"
+                >
+                    🛒
+                </button>
+
+                <button
+                    class="product-open"
+                    type="button"
+                >
+                    ↗
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <div
+            class="product"
+            data-name="LG UltraGear 27 inch"
+            data-category="monitor"
+            data-price="620000"
+        >
+
+            <label>جديد</label>
+
+            <div class="product-image">
+                🖥️
+            </div>
+
+            <h4>
+                LG UltraGear 27"
+            </h4>
+
+            <p>
+                2K / 165Hz / 1ms
+            </p>
+
+            <div class="price">
+                620,000 IQD
+            </div>
+
+            <div class="product-actions">
+
+                <button
+                    class="favorite-btn"
+                    type="button"
+                >
+                    ♡
+                </button>
+
+                <button
+                    class="add-cart"
+                    type="button"
+                >
+                    🛒
+                </button>
+
+                <button
+                    class="product-open"
+                    type="button"
+                >
+                    ↗
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <div
+            class="product"
+            data-name="HyperX Cloud III"
+            data-category="accessories"
+            data-price="210000"
+        >
+
+            <div class="product-image">
+                🎧
+            </div>
+
+            <h4>
+                HyperX Cloud III
+            </h4>
+
+            <p>
+                Gaming Headset
+            </p>
+
+            <div class="price">
+                210,000 IQD
+            </div>
+
+            <div class="product-actions">
+
+                <button
+                    class="favorite-btn"
+                    type="button"
+                >
+                    ♡
+                </button>
+
+                <button
+                    class="add-cart"
+                    type="button"
+                >
+                    🛒
+                </button>
+
+                <button
+                    class="product-open"
+                    type="button"
+                >
+                    ↗
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <div
+            class="product"
+            data-name="Logitech G Pro X"
+            data-category="accessories"
+            data-price="200000"
+        >
+
+            <div class="product-image">
+                ⌨️
+            </div>
+
+            <h4>
+                Logitech G Pro X
+            </h4>
+
+            <p>
+                Mechanical Keyboard
+            </p>
+
+            <div class="price">
+                200,000 IQD
+            </div>
+
+            <div class="product-actions">
+
+                <button
+                    class="favorite-btn"
+                    type="button"
+                >
+                    ♡
+                </button>
+
+                <button
+                    class="add-cart"
+                    type="button"
+                >
+                    🛒
+                </button>
+
+                <button
+                    class="product-open"
+                    type="button"
+                >
+                    ↗
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- BENEFITS -->
+
+<div class="benefits">
+
+    <div>
+        <strong>♕</strong>
+        <h4>جودة مضمونة</h4>
+        <p>منتجات أصلية 100%</p>
+    </div>
+
+    <div>
+        <strong>◈</strong>
+        <h4>أسعار تنافسية</h4>
+        <p>أفضل الأسعار</p>
+    </div>
+
+    <div>
+        <strong>🚚</strong>
+        <h4>شحن سريع وآمن</h4>
+        <p>لجميع المحافظات</p>
+    </div>
+
+    <div>
+        <strong>♧</strong>
+        <h4>دعم فني احترافي</h4>
+        <p>24/7</p>
+    </div>
+
+</div>
+
+
+<!-- NEWSLETTER -->
+
+<div class="newsletter">
+
+    <div>
+
+        <h3>
+            كن أول من يعرف عن العروض والمنتجات الجديدة
+        </h3>
+
+        <p>
+            اشترك الآن في نشرتنا البريدية
+        </p>
+
+        <div class="email-box">
+
+            <input
+                type="email"
+                placeholder="أدخل بريدك الإلكتروني"
+            >
+
+            <button type="button">
+                اشترك الآن
+            </button>
+
+        </div>
+
+    </div>
+
+    <div class="newsletter-icon">
+        ✉
+    </div>
+
+</div>
+
+
+<!-- FOOTER -->
+
+<footer id="contact">
+
+    <div class="footer-grid">
+
+        <div>
+
+            <div class="footer-logo">
+                LAEL IQ
+            </div>
+
+            <p>
+                LAEL IQ متجر تقني عراقي متخصص
+                بأجهزة الكمبيوتر واللابتوبات
+                والإكسسوارات والحلول التقنية،
+                بجودة عالية وخدمة احترافية.
+            </p>
+
+        </div>
+
+
+        <div>
+
+            <h4>روابط سريعة</h4>
+
+            <ul>
+                <li>الرئيسية</li>
+                <li>المتجر</li>
+                <li>عن LAEL</li>
+                <li>الضمان</li>
+                <li>الشحن والتوصيل</li>
+                <li>تواصل معنا</li>
+            </ul>
+
+        </div>
+
+
+        <div>
+
+            <h4>الفئات</h4>
+
+            <ul>
+                <li>أجهزة اللابتوب</li>
+                <li>تجميعات PC</li>
+                <li>كروت الشاشة</li>
+                <li>الشاشات</li>
+                <li>الإكسسوارات</li>
+                <li>الشبكات</li>
+            </ul>
+
+        </div>
+
+
+        <div>
+
+            <h4>تواصل معنا</h4>
+
+            <ul>
+                <li>📍 العراق - بغداد</li>
+                <li>☎ +964 770 123 4567</li>
+                <li>✉ support@lael-iq.com</li>
+                <li>🕐 10:00 AM - 10:00 PM</li>
+            </ul>
+
+        </div>
+
+    </div>
+
+
+    <div class="copyright">
+
+        © 2026 جميع الحقوق محفوظة لـ LAEL IQ
+        — From Iraq To The World
+
+    </div>
+
+</footer>
+
+
+<script src="../assets/js/app.js"></script>
+<script src="../assets/js/navbar.js"></script>
+
+
+</body>
+</html>

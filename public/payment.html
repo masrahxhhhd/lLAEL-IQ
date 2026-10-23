@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LAEL IQ | الدفع الإلكتروني</title>
+<link rel="stylesheet" href="../assets/css/style.css">
+<link rel="stylesheet" href="../assets/css/glow.css"></head>
+<body>
+<header class="navbar">
+    <div class="logo">
+        <h1>LAEL IQ</h1>
+        <span>FROM IRAQ TO THE WORLD</span>
+    </div>
+</header>
+
+<main class="payment-page">
+    <div class="payment-card">
+        <div class="payment-brand">
+            <h1>الدفع <strong style="color:#e8b638">الإلكتروني</strong></h1>
+            <p>أدخل بيانات بطاقتك لإكمال عملية الدفع بأمان</p>
+        </div>
+
+        <div id="paymentError" class="payment-error"></div>
+
+        <div class="payment-summary">
+            <span>المبلغ المطلوب</span>
+            <strong id="paymentTotal">0 IQD</strong>
+        </div>
+
+        <form id="paymentForm">
+            <div class="payment-grid">
+                <div class="payment-group full">
+                    <label for="cardNumber">رقم البطاقة</label>
+                    <input id="cardNumber" inputmode="numeric" autocomplete="cc-number" maxlength="19" placeholder="0000 0000 0000 0000" required>
+                </div>
+
+                <div class="payment-group">
+                    <label for="cardName">اسم حامل البطاقة</label>
+                    <input id="cardName" autocomplete="cc-name" placeholder="الاسم كما هو على البطاقة" required>
+                </div>
+
+                <div class="payment-group">
+                    <label for="cvv">CVV</label>
+                    <input id="cvv" inputmode="numeric" autocomplete="cc-csc" maxlength="4" placeholder="123" required>
+                </div>
+
+                <div class="payment-group">
+                    <label for="expiryMonth">شهر الانتهاء</label>
+                    <input id="expiryMonth" inputmode="numeric" autocomplete="cc-exp-month" maxlength="2" placeholder="MM" required>
+                </div>
+
+                <div class="payment-group">
+                    <label for="expiryYear">سنة الانتهاء</label>
+                    <input id="expiryYear" inputmode="numeric" autocomplete="cc-exp-year" maxlength="4" placeholder="YYYY" required>
+                </div>
+            </div>
+
+            <p class="payment-note">
+                🔒 بيانات البطاقة لا يتم حفظها في المتصفح. عند ربط السيرفر ببوابة الدفع، يتم إرسال بيانات الدفع مباشرة إلى نقطة الدفع الآمنة، وتعود النتيجة من مزود الدفع: نجاح أو عدم وجود رصيد كافٍ أو رفض العملية.
+            </p>
+
+            <div class="payment-actions">
+                <button class="payment-submit" type="submit" id="payButton">دفع المبلغ الآن</button>
+                <a class="payment-back" href="checkout.html">العودة لإتمام الطلب</a>
+            </div>
+        </form>
+    </div>
+</main>
+
+<script src="../assets/js/app.js"></script>
+<script src="../assets/js/payment.js"></script>
+</body>
+</html>

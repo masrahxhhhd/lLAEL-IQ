@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LAEL IQ | المنتج</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/glow.css"></head>
+<body>
+<header class="navbar product-navbar">
+    <div class="logo">
+        <h1>LAEL IQ</h1>
+        <span>FROM IRAQ TO THE WORLD</span>
+    </div>
+    <nav class="nav-links">
+        <a href="index.html">الرئيسية</a>
+        <a href="index.html#products">المتجر</a>
+        <a href="index.html#categories">الفئات</a>
+    </nav>
+    <div class="nav-actions">
+        <button class="icon-btn favorite-nav-btn" type="button" aria-label="المفضلة">♡</button>
+        <button class="icon-btn cart-btn" type="button" aria-label="السلة">🛒</button>
+    </div>
+</header>
+
+<main class="product-details">
+    <div class="product-detail-image">
+        <img id="productImage" class="product-main-image" src="" alt="صورة المنتج" style="display:none;">
+        <div id="productImagePlaceholder" class="product-image-placeholder">💻</div>
+    </div>
+
+    <section class="product-detail-info">
+        <span class="product-brand">LAEL IQ</span>
+        <h1 class="product-title">اسم المنتج</h1>
+        <p class="product-description">وصف المنتج</p>
+        <div class="product-rating" aria-label="تقييم المنتج">★★★★★ <small>تقييم العملاء</small></div>
+        <div class="product-price">0 IQD</div>
+        <div class="product-detail-divider"></div>
+
+        <div class="product-quantity-row">
+            <span>الكمية</span>
+            <div class="product-quantity">
+                <button type="button" id="quantityMinus">−</button>
+                <strong id="productQuantity">1</strong>
+                <button type="button" id="quantityPlus">+</button>
+            </div>
+        </div>
+
+        <div class="product-detail-actions">
+            <button type="button" id="addProductCart" class="product-add-cart">🛒 إضافة إلى السلة</button>
+            <button type="button" id="buyNow" class="product-buy-now">شراء الآن</button>
+            <button type="button" id="productFavorite" class="product-favorite" aria-label="إضافة للمفضلة">♡</button>
+        </div>
+
+        <div class="product-benefits">
+            <div><strong>🚚</strong><span>شحن سريع<small>لجميع المحافظات</small></span></div>
+            <div><strong>🛡️</strong><span>ضمان حقيقي<small>خدمة موثوقة</small></span></div>
+            <div><strong>☎️</strong><span>دعم فني<small>متوفر 24/7</small></span></div>
+        </div>
+    </section>
+</main>
+<script src="../assets/js/app.js"></script>
+</body>
+</html>

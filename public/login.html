@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LAEL IQ | تسجيل الدخول</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/style.css">
+<link rel="stylesheet" href="../assets/css/auth.css">
+<link rel="stylesheet" href="../assets/css/glow.css"></head>
+<body>
+<header class="navbar">
+<div class="logo"><h1>LAEL IQ</h1><span>FROM IRAQ TO THE WORLD</span></div>
+<nav class="nav-links"><a href="index.html">الرئيسية</a><a href="index.html#products">المتجر</a><a href="index.html#categories">الفئات</a></nav>
+<div class="nav-actions">
+<a class="icon-btn" href="favorites.html" aria-label="المفضلة">♡</a>
+<a class="icon-btn" href="cart.html" aria-label="السلة">🛒</a>
+</div>
+</header>
+<main class="account-page">
+<section
+        id="authSection"
+        class="auth-box"
+    >
+
+        <div class="auth-heading">
+
+            <span>LAEL IQ</span>
+
+            <h1>
+                حسابك في
+                <strong>LAEL IQ</strong>
+            </h1>
+
+            <p>
+                سجل دخولك أو أنشئ حسابًا جديدًا
+            </p>
+
+        </div>
+
+
+        <div class="auth-tabs">
+
+            <button
+                id="loginTab"
+                class="auth-tab active"
+                type="button"
+            >
+                تسجيل الدخول
+            </button>
+
+            <button
+                id="registerTab"
+                class="auth-tab"
+                type="button"
+            >
+                إنشاء حساب
+            </button>
+
+        </div>
+
+
+        <!-- LOGIN -->
+
+        <form
+            id="loginForm"
+            class="auth-form"
+        >
+
+            <div class="auth-group">
+
+                <label>
+                    البريد الإلكتروني
+                </label>
+
+                <input
+                    id="loginEmail"
+                    type="email"
+                    placeholder="example@email.com"
+                    autocomplete="email"
+                    required
+                >
+
+            </div>
+
+
+            <div class="auth-group">
+
+                <label>
+                    كلمة المرور
+                </label>
+
+                <input
+                    id="loginPassword"
+                    type="password"
+                    placeholder="••••••••"
+                    autocomplete="current-password"
+                    required
+                >
+
+            </div>
+
+
+            <button
+                class="auth-submit"
+                type="submit"
+            >
+                تسجيل الدخول
+            </button>
+
+
+            <p
+                id="loginMessage"
+                class="auth-message"
+            ></p>
+
+        </form>
+
+
+        <!-- REGISTER -->
+
+        <form
+            id="registerForm"
+            class="auth-form hidden"
+        >
+
+            <div class="auth-group">
+
+                <label>
+                    الاسم الكامل
+                </label>
+
+                <input
+                    id="registerName"
+                    type="text"
+                    placeholder="محمد بهاء"
+                    autocomplete="name"
+                    required
+                >
+
+            </div>
+
+
+            <div class="auth-group">
+
+                <label>
+                    رقم الهاتف
+                </label>
+
+                <input
+                    id="registerPhone"
+                    type="tel"
+                    placeholder="07XXXXXXXXX"
+                    autocomplete="tel"
+                    required
+                >
+
+            </div>
+
+
+            <div class="auth-group">
+
+                <label>
+                    البريد الإلكتروني
+                </label>
+
+                <input
+                    id="registerEmail"
+                    type="email"
+                    placeholder="example@email.com"
+                    autocomplete="email"
+                    required
+                >
+
+            </div>
+
+
+            <div class="auth-group">
+
+                <label>
+                    كلمة المرور
+                </label>
+
+                <input
+                    id="registerPassword"
+                    type="password"
+                    placeholder="••••••••"
+                    minlength="6"
+                    autocomplete="new-password"
+                    required
+                >
+
+            </div>
+
+
+            <div class="auth-group">
+
+                <label>
+                    تأكيد كلمة المرور
+                </label>
+
+                <input
+                    id="registerPasswordConfirm"
+                    type="password"
+                    placeholder="••••••••"
+                    minlength="6"
+                    autocomplete="new-password"
+                    required
+                >
+
+            </div>
+
+
+            <button
+                class="auth-submit"
+                type="submit"
+            >
+                إنشاء الحساب
+            </button>
+
+
+            <p
+                id="registerMessage"
+                class="auth-message"
+            ></p>
+
+        </form>
+
+    </section>
+</main>
+<footer><div class="copyright">© 2026 جميع الحقوق محفوظة لـ LAEL IQ — From Iraq To The World</div></footer>
+<script src="../assets/js/auth.js"></script>
+<script src="../assets/js/navbar.js"></script>
+</body>
+</html>

@@ -1,0 +1,552 @@
+/* =========================================
+   LAEL IQ ACCOUNT
+========================================= */
+
+.account-page {
+    width: min(900px, 92%);
+    margin: 70px auto 100px;
+}
+
+
+/* =========================
+   COMMON
+========================= */
+
+.hidden {
+    display: none !important;
+}
+
+
+/* =========================
+   AUTH BOX
+========================= */
+
+.auth-box,
+.account-box {
+
+    width: min(520px, 100%);
+
+    margin: 0 auto;
+
+    background:
+        linear-gradient(
+            145deg,
+            #101010,
+            #080808
+        );
+
+    border: 1px solid rgba(218,169,43,.25);
+
+    border-radius: 15px;
+
+    padding: 35px;
+
+    box-shadow:
+        0 25px 80px rgba(0,0,0,.45);
+}
+
+
+/* =========================
+   HEADING
+========================= */
+
+.auth-heading {
+    text-align: center;
+    margin-bottom: 28px;
+}
+
+.auth-heading > span {
+
+    display: inline-block;
+
+    color: #dca82d;
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 10px;
+}
+
+.auth-heading h1 {
+
+    margin: 0;
+
+    font-size: 26px;
+}
+
+.auth-heading h1 strong {
+    color: #e7b536;
+}
+
+.auth-heading p {
+
+    color: #777;
+
+    font-size: 10px;
+
+    margin: 8px 0 0;
+}
+
+
+/* =========================
+   TABS
+========================= */
+
+.auth-tabs {
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 7px;
+
+    margin-bottom: 25px;
+
+    padding: 4px;
+
+    background: #050505;
+
+    border: 1px solid #1d1d1d;
+
+    border-radius: 8px;
+}
+
+.auth-tab {
+
+    height: 42px;
+
+    border: 0;
+
+    border-radius: 6px;
+
+    background: transparent;
+
+    color: #777;
+
+    cursor: pointer;
+
+    font-size: 11px;
+
+    transition: .2s;
+}
+
+.auth-tab:hover {
+    color: #e5b335;
+}
+
+.auth-tab.active {
+
+    background:
+        linear-gradient(
+            135deg,
+            #c9911d,
+            #edbd45
+        );
+
+    color: #111;
+
+    font-weight: 900;
+}
+
+
+/* =========================
+   FORM
+========================= */
+
+.auth-form {
+
+    display: grid;
+
+    gap: 15px;
+}
+
+.auth-group {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 7px;
+}
+
+.auth-group label {
+
+    color: #aaa;
+
+    font-size: 10px;
+}
+
+.auth-group input {
+
+    width: 100%;
+
+    height: 45px;
+
+    background: #050505;
+
+    border: 1px solid #252525;
+
+    border-radius: 7px;
+
+    color: #fff;
+
+    padding: 0 13px;
+
+    outline: none;
+
+    direction: rtl;
+
+    transition: .2s;
+}
+
+.auth-group input:focus {
+
+    border-color: #dca72d;
+
+    box-shadow:
+        0 0 0 2px rgba(220,167,45,.06);
+}
+
+.auth-group input::placeholder {
+    color: #444;
+}
+
+
+/* =========================
+   SUBMIT
+========================= */
+
+.auth-submit {
+
+    height: 47px;
+
+    margin-top: 5px;
+
+    border: 1px solid #d7a42e;
+
+    border-radius: 7px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #c9911d,
+            #f2c54c
+        );
+
+    color: #111;
+
+    font-weight: 900;
+
+    cursor: pointer;
+
+    transition: .2s;
+}
+
+.auth-submit:hover {
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 10px 30px rgba(218,169,43,.16);
+}
+
+
+/* =========================
+   MESSAGE
+========================= */
+
+.auth-message {
+
+    min-height: 18px;
+
+    margin: 0;
+
+    text-align: center;
+
+    color: #e7b536;
+
+    font-size: 10px;
+}
+
+.auth-message.error {
+    color: #e56b6b;
+}
+
+.auth-message.success {
+    color: #76c893;
+}
+
+
+/* =========================
+   ACCOUNT
+========================= */
+
+.account-box {
+
+    width: min(850px, 100%);
+}
+
+
+/* =========================
+   ACCOUNT HEADER
+========================= */
+
+.account-header {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 18px;
+
+    padding-bottom: 25px;
+
+    margin-bottom: 25px;
+
+    border-bottom: 1px solid #202020;
+}
+
+.account-avatar {
+
+    width: 70px;
+
+    height: 70px;
+
+    flex: 0 0 70px;
+
+    display: grid;
+
+    place-items: center;
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(
+            135deg,
+            #c9911d,
+            #f2c54c
+        );
+
+    color: #111;
+
+    font-size: 27px;
+
+    font-weight: 900;
+}
+
+.account-header > div:last-child > span {
+
+    color: #777;
+
+    font-size: 10px;
+}
+
+.account-header h1 {
+
+    margin: 2px 0;
+
+    color: #e7b536;
+
+    font-size: 22px;
+}
+
+.account-header p {
+
+    margin: 0;
+
+    color: #666;
+
+    font-size: 10px;
+}
+
+
+/* =========================
+   ACCOUNT CARDS
+========================= */
+
+.account-grid {
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 12px;
+
+    margin-bottom: 25px;
+}
+
+.account-card {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+    min-height: 95px;
+
+    padding: 16px;
+
+    background: #080808;
+
+    border: 1px solid #1d1d1d;
+
+    border-radius: 9px;
+
+    transition: .2s;
+}
+
+.account-card[onclick] {
+    cursor: pointer;
+}
+
+.account-card:hover {
+
+    border-color: rgba(218,169,43,.45);
+
+    transform: translateY(-3px);
+}
+
+.account-card-icon {
+
+    width: 43px;
+
+    height: 43px;
+
+    flex: 0 0 43px;
+
+    display: grid;
+
+    place-items: center;
+
+    border-radius: 8px;
+
+    background: rgba(218,169,43,.08);
+
+    color: #e6b338;
+
+    font-size: 20px;
+}
+
+.account-card strong {
+
+    display: block;
+
+    color: #eee;
+
+    font-size: 11px;
+}
+
+.account-card p {
+
+    margin: 5px 0 0;
+
+    color: #666;
+
+    font-size: 9px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================
+   LOGOUT
+========================= */
+
+.logout-button {
+
+    width: 100%;
+
+    height: 43px;
+
+    border: 1px solid #3b2525;
+
+    border-radius: 7px;
+
+    background: #0a0808;
+
+    color: #d77;
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    cursor: pointer;
+
+    transition: .2s;
+}
+
+.logout-button:hover {
+
+    border-color: #a44;
+
+    background: rgba(150,50,50,.08);
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width:650px) {
+
+    .account-page {
+        width: 92%;
+        margin: 45px auto 70px;
+    }
+
+    .auth-box,
+    .account-box {
+        padding: 23px 18px;
+    }
+
+    .auth-heading h1 {
+        font-size: 22px;
+    }
+
+    .account-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .account-header {
+        gap: 13px;
+    }
+
+    .account-avatar {
+        width: 58px;
+        height: 58px;
+        flex-basis: 58px;
+        font-size: 22px;
+    }
+
+    .account-header h1 {
+        font-size: 19px;
+    }
+
+}
+
+/* =========================
+   ACCOUNT EDITOR
+========================= */
+.account-profile-editor{
+    margin:25px 0;
+    padding:20px;
+    border:1px solid rgba(218,169,43,.18);
+    border-radius:12px;
+    background:#090909;
+}
+.account-editor-head{display:flex;align-items:center;justify-content:space-between;gap:15px}
+.account-editor-head strong{color:#e7b536;font-size:15px}
+.account-editor-head p{margin:5px 0 0;color:#777;font-size:10px}
+.account-edit-button,.account-cancel-button{border:1px solid rgba(218,169,43,.4);background:#111;color:#e7b536;border-radius:7px;padding:8px 15px;font-family:inherit;font-weight:800;cursor:pointer}
+.account-edit-button:hover,.account-cancel-button:hover{border-color:#e7b536;background:rgba(218,169,43,.08)}
+.account-edit-form{margin-top:18px}
+.account-edit-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.account-edit-grid label{display:grid;gap:6px;color:#aaa;font-size:10px}
+.account-edit-grid input{height:42px;background:#050505;border:1px solid #252525;border-radius:7px;color:#fff;padding:0 12px;outline:none}
+.account-edit-grid input:focus{border-color:#dca72d}
+.account-edit-actions{display:flex;gap:8px;margin-top:14px}
+.account-edit-actions .auth-submit{flex:1}
+.account-edit-actions .account-cancel-button{min-width:90px}
+@media(max-width:600px){.account-edit-grid{grid-template-columns:1fr}.account-editor-head{align-items:flex-start;flex-direction:column}.account-edit-actions{flex-direction:column}}

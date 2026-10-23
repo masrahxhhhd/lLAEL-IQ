@@ -1,0 +1,942 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>LAEL IQ | إضافة منتج</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    box-sizing:border-box;
+}
+
+body{
+    margin:0;
+    background:#080808;
+    color:#fff;
+    font-family:"Cairo",sans-serif;
+}
+
+.sidebar{
+    position:fixed;
+    right:0;
+    top:0;
+    width:270px;
+    height:100vh;
+    background:#111;
+    border-left:1px solid #292929;
+    padding:30px 20px;
+    z-index:10;
+}
+
+.logo{
+    text-align:center;
+    margin-bottom:40px;
+}
+
+.logo h1{
+    margin:0;
+    color:#d4af37;
+    font-size:34px;
+    font-weight:900;
+    letter-spacing:3px;
+}
+
+.logo span{
+    display:block;
+    color:#777;
+    font-size:10px;
+    letter-spacing:1.5px;
+}
+
+.admin-label{
+    text-align:center;
+    color:#aaa;
+    font-size:13px;
+    margin-bottom:25px;
+}
+
+.menu{
+    display:flex;
+    flex-direction:column;
+    gap:8px;
+}
+
+.menu a{
+    display:block;
+    text-decoration:none;
+    color:#aaa;
+    padding:14px 16px;
+    border-radius:10px;
+    font-size:14px;
+    font-weight:700;
+    transition:.2s;
+}
+
+.menu a:hover,
+.menu a.active{
+    color:#d4af37;
+    background:rgba(212,175,55,.1);
+}
+
+.logout{
+    position:absolute;
+    right:20px;
+    bottom:25px;
+    width:calc(100% - 40px);
+    padding:13px;
+    border:1px solid #542222;
+    border-radius:10px;
+    background:#1a0c0c;
+    color:#ff7777;
+    font-family:inherit;
+    font-weight:700;
+    cursor:pointer;
+}
+
+.main{
+    margin-right:270px;
+    min-height:100vh;
+    padding:35px;
+}
+
+.top{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    margin-bottom:30px;
+}
+
+.top h2{
+    margin:0;
+    font-size:28px;
+}
+
+.top p{
+    margin:5px 0 0;
+    color:#777;
+    font-size:13px;
+}
+
+.back{
+    text-decoration:none;
+    color:#aaa;
+    border:1px solid #333;
+    padding:9px 15px;
+    border-radius:8px;
+    font-size:13px;
+}
+
+.back:hover{
+    color:#d4af37;
+    border-color:#d4af37;
+}
+
+.form-grid{
+    display:grid;
+    grid-template-columns:2fr 1fr;
+    gap:22px;
+}
+
+.panel{
+    background:#111;
+    border:1px solid #252525;
+    border-radius:16px;
+    padding:25px;
+    margin-bottom:22px;
+}
+
+.panel h3{
+    margin:0 0 22px;
+    font-size:18px;
+}
+
+.field{
+    margin-bottom:18px;
+}
+
+.field:last-child{
+    margin-bottom:0;
+}
+
+.field label{
+    display:block;
+    color:#ccc;
+    font-size:13px;
+    font-weight:700;
+    margin-bottom:8px;
+}
+
+.field input,
+.field textarea,
+.field select{
+    width:100%;
+    background:#0b0b0b;
+    border:1px solid #333;
+    border-radius:9px;
+    color:#fff;
+    padding:12px 14px;
+    outline:none;
+    font-family:inherit;
+    font-size:14px;
+}
+
+.field input{
+    height:48px;
+}
+
+.field textarea{
+    min-height:130px;
+    resize:vertical;
+}
+
+.field input:focus,
+.field textarea:focus,
+.field select:focus{
+    border-color:#d4af37;
+    box-shadow:0 0 0 3px rgba(212,175,55,.07);
+}
+
+.two-fields{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:15px;
+}
+
+.upload{
+    display:block;
+    border:1px dashed #444;
+    border-radius:12px;
+    padding:25px;
+    text-align:center;
+    cursor:pointer;
+}
+
+.upload:hover{
+    border-color:#d4af37;
+}
+
+.upload-icon{
+    font-size:40px;
+    margin-bottom:8px;
+}
+
+.upload p{
+    margin:0;
+    color:#888;
+    font-size:12px;
+}
+
+.preview{
+    display:none;
+    margin-top:15px;
+}
+
+.preview img{
+    display:block;
+    width:100%;
+    max-height:240px;
+    object-fit:contain;
+    background:#080808;
+    border-radius:10px;
+}
+
+.options{
+    display:grid;
+    gap:12px;
+}
+
+.check{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    padding:12px;
+    background:#0b0b0b;
+    border:1px solid #292929;
+    border-radius:9px;
+    cursor:pointer;
+}
+
+.check input{
+    accent-color:#d4af37;
+}
+
+.check span{
+    color:#ccc;
+    font-size:13px;
+}
+
+.save-area{
+    display:flex;
+    justify-content:flex-end;
+    gap:12px;
+}
+
+.cancel,
+.save{
+    padding:13px 25px;
+    border-radius:9px;
+    font-family:inherit;
+    font-weight:800;
+    cursor:pointer;
+}
+
+.cancel{
+    border:1px solid #333;
+    background:#171717;
+    color:#aaa;
+}
+
+.save{
+    border:0;
+    background:#d4af37;
+    color:#111;
+    padding-left:30px;
+    padding-right:30px;
+}
+
+.success{
+    display:none;
+    margin-top:18px;
+    padding:12px;
+    border-radius:9px;
+    background:rgba(50,180,100,.1);
+    border:1px solid rgba(50,180,100,.25);
+    color:#6be09a;
+    font-size:13px;
+}
+
+@media(max-width:1000px){
+
+    .sidebar{
+        width:220px;
+    }
+
+    .main{
+        margin-right:220px;
+    }
+
+    .form-grid{
+        grid-template-columns:1fr;
+    }
+}
+
+@media(max-width:700px){
+
+    .sidebar{
+        position:relative;
+        width:100%;
+        height:auto;
+        border-left:0;
+        border-bottom:1px solid #292929;
+    }
+
+    .logout{
+        position:static;
+        width:100%;
+        margin-top:20px;
+    }
+
+    .main{
+        margin-right:0;
+        padding:20px;
+    }
+
+    .two-fields{
+        grid-template-columns:1fr;
+    }
+
+    .top{
+        flex-direction:column;
+        align-items:flex-start;
+        gap:15px;
+    }
+
+    .save-area{
+        flex-direction:column;
+    }
+
+    .save,
+    .cancel{
+        width:100%;
+    }
+}
+
+</style>
+<link rel="stylesheet" href="../assets/css/glow.css"></head>
+
+<body>
+
+<aside class="sidebar">
+
+    <div class="logo">
+        <h1>LAEL IQ</h1>
+        <span>FROM IRAQ TO THE WORLD</span>
+    </div>
+
+    <div class="admin-label">
+        لوحة تحكم الإدارة
+    </div>
+
+    <nav class="menu">
+<a href="index.html">📊 لوحة التحكم</a>
+<a href="products.html">📦 المنتجات</a>
+<a href="product.html">➕ إضافة منتج</a>
+<a href="categories.html">🗂️ الفئات</a>
+<a href="orders.html">🛒 الطلبات</a>
+<a href="customers.html">👥 العملاء</a>
+<a href="offers.html">🏷️ العروض والخصومات</a>
+<a href="inventory.html">📊 المخزون</a>
+<a href="settings.html">⚙️ الإعدادات</a>
+<a href="../public/index.html">🏪 المتجر</a>
+</nav>
+
+    <button class="logout" id="logoutButton">
+        تسجيل الخروج
+    </button>
+
+</aside>
+
+
+<main class="main">
+
+<div class="top">
+
+    <div>
+
+        <h2>إضافة منتج جديد</h2>
+
+        <p>
+            أضف منتجاً جديداً إلى متجر LAEL IQ
+        </p>
+
+    </div>
+
+    <a href="index.html" class="back">
+        ← العودة للوحة التحكم
+    </a>
+
+</div>
+
+
+<form id="productForm">
+
+<div class="form-grid">
+
+<div>
+
+<section class="panel">
+
+<h3>المعلومات الأساسية</h3>
+
+<div class="field">
+
+<label>اسم المنتج</label>
+
+<input
+type="text"
+id="productName"
+placeholder="مثال: ASUS ROG Strix G16"
+required
+>
+
+</div>
+
+
+<div class="field">
+
+<label>وصف المنتج</label>
+
+<textarea
+id="productDescription"
+placeholder="اكتب وصفاً واضحاً ومختصراً للمنتج..."
+required
+></textarea>
+
+</div>
+
+
+<div class="two-fields">
+
+<div class="field">
+
+<label>التصنيف</label>
+
+<select id="productCategory" required>
+
+<option value="">اختر التصنيف</option>
+
+<option>أجهزة اللابتوب</option>
+<option>تجميعات PC</option>
+<option>كروت الشاشة</option>
+<option>الشاشات</option>
+<option>الإكسسوارات</option>
+<option>الشبكات</option>
+
+</select>
+
+</div>
+
+
+<div class="field">
+
+<label>الماركة</label>
+
+<input
+type="text"
+id="productBrand"
+placeholder="ASUS / MSI / LG..."
+>
+
+</div>
+
+</div>
+
+</section>
+
+
+<section class="panel">
+
+<h3>السعر والمخزون</h3>
+
+<div class="two-fields">
+
+<div class="field">
+
+<label>السعر الحالي — IQD</label>
+
+<input
+type="number"
+id="productPrice"
+placeholder="1850000"
+min="0"
+required
+>
+
+</div>
+
+
+<div class="field">
+
+<label>السعر قبل الخصم — IQD</label>
+
+<input
+type="number"
+id="oldPrice"
+placeholder="2000000"
+min="0"
+>
+
+</div>
+
+</div>
+
+
+<div class="two-fields">
+
+<div class="field">
+
+<label>الكمية بالمخزون</label>
+
+<input
+type="number"
+id="productStock"
+placeholder="10"
+min="0"
+required
+>
+
+</div>
+
+
+<div class="field">
+
+<label>SKU / كود المنتج</label>
+
+<input
+type="text"
+id="productSKU"
+placeholder="LAEL-001"
+>
+
+</div>
+
+</div>
+
+</section>
+
+
+<section class="panel">
+
+<h3>مواصفات المنتج</h3>
+
+<div class="field">
+
+<label>المواصفات</label>
+
+<textarea
+id="productSpecs"
+placeholder="المعالج: i7-13650HX&#10;كرت الشاشة: RTX 4060&#10;الرام: 16GB&#10;التخزين: 1TB SSD"
+></textarea>
+
+</div>
+
+</section>
+
+</div>
+
+
+<div>
+
+
+<section class="panel">
+
+<h3>صورة المنتج</h3>
+
+<label class="upload" for="productImage">
+
+<div class="upload-icon">
+🖼️
+</div>
+
+<strong>
+اضغط لاختيار صورة
+</strong>
+
+<p>
+PNG / JPG / WEBP
+</p>
+
+</label>
+
+<input
+type="file"
+id="productImage"
+accept="image/png,image/jpeg,image/webp"
+hidden
+>
+
+<div class="preview" id="imagePreview">
+
+<img id="previewImage" alt="معاينة المنتج">
+
+</div>
+
+</section>
+
+
+<section class="panel">
+
+<h3>حالة المنتج</h3>
+
+<div class="options">
+
+<label class="check">
+
+<input type="checkbox" id="isNew">
+
+<span>
+عرض المنتج كـ «جديد»
+</span>
+
+</label>
+
+
+<label class="check">
+
+<input type="checkbox" id="isDiscount">
+
+<span>
+عرض المنتج كـ «خصم»
+</span>
+
+</label>
+
+
+<label class="check">
+
+<input type="checkbox" id="isFeatured">
+
+<span>
+منتج مميز
+</span>
+
+</label>
+
+</div>
+
+</section>
+
+
+<section class="panel">
+
+<h3>توفر المنتج</h3>
+
+<div class="field">
+
+<select id="productStatus">
+
+<option value="available">
+متوفر
+</option>
+
+<option value="limited">
+كمية محدودة
+</option>
+
+<option value="out">
+غير متوفر
+</option>
+
+</select>
+
+</div>
+
+</section>
+
+</div>
+
+</div>
+
+
+<div class="save-area">
+
+<button
+type="button"
+class="cancel"
+onclick="window.location.href='products.html'"
+>
+إلغاء
+</button>
+
+<button
+type="submit"
+class="save"
+>
+حفظ المنتج
+</button>
+
+</div>
+
+
+<div
+class="success"
+id="successMessage"
+>
+تم حفظ المنتج بنجاح وسيظهر الآن في المتجر.
+</div>
+
+</form>
+
+</main>
+
+
+<script>
+
+/* الفئات المضافة من صفحة الفئات */
+(function(){
+    try{
+        const cats = JSON.parse(localStorage.getItem("laelCategories") || "[]");
+        const select = document.getElementById("productCategory");
+        if(Array.isArray(cats) && select){
+            cats.forEach(function(c){
+                if(!c || !c.name) return;
+                const opt = document.createElement("option");
+                opt.value = c.name;
+                opt.textContent = c.name;
+                select.appendChild(opt);
+            });
+        }
+    }catch(e){}
+})();
+
+const urlParams = new URLSearchParams(window.location.search);
+const editProductId = urlParams.get("edit") || "";
+let editingProduct = null;
+
+
+/* حماية الأدمن */
+
+if(
+sessionStorage.getItem("laelAdminLoggedIn") !== "true"
+){
+    window.location.replace("login.html");
+}
+
+
+/* تسجيل الخروج */
+
+document
+.getElementById("logoutButton")
+.addEventListener("click",function(){
+
+    sessionStorage.removeItem("laelAdminLoggedIn");
+
+    window.location.replace("login.html");
+
+});
+
+
+/* معاينة الصورة */
+
+let selectedImage = "";
+
+document
+.getElementById("productImage")
+.addEventListener("change",function(event){
+
+    const file = event.target.files[0];
+
+    if(!file) return;
+
+    if(file.size > 5 * 1024 * 1024){
+        alert("حجم الصورة كبير. الحد الأقصى 5MB.");
+        event.target.value = "";
+        return;
+    }
+
+    const reader = new FileReader();
+
+    reader.onload = function(e){
+        const img = new Image();
+        img.onload = function(){
+            const max = 1400;
+            const scale = Math.min(1, max / Math.max(img.width, img.height));
+            const canvas = document.createElement("canvas");
+            canvas.width = Math.max(1, Math.round(img.width * scale));
+            canvas.height = Math.max(1, Math.round(img.height * scale));
+            const ctx = canvas.getContext("2d");
+            ctx.drawImage(img,0,0,canvas.width,canvas.height);
+            selectedImage = canvas.toDataURL("image/jpeg",0.82);
+            document.getElementById("previewImage").src = selectedImage;
+            document.getElementById("imagePreview").style.display = "block";
+        };
+        img.src = e.target.result;
+    };
+
+    reader.readAsDataURL(file);
+
+});
+
+
+/* حفظ / تعديل المنتج */
+
+document
+.getElementById("productForm")
+.addEventListener("submit",function(event){
+
+event.preventDefault();
+
+const products = JSON.parse(localStorage.getItem("laelProducts") || "[]");
+
+const product = {
+
+    id: editingProduct ? editingProduct.id : "LAEL-" + Date.now(),
+
+    name: document.getElementById("productName").value.trim(),
+    description: document.getElementById("productDescription").value.trim(),
+    category: document.getElementById("productCategory").value,
+    brand: document.getElementById("productBrand").value.trim(),
+    price: Number(document.getElementById("productPrice").value),
+    oldPrice: Number(document.getElementById("oldPrice").value) || 0,
+    stock: Number(document.getElementById("productStock").value),
+    sku: document.getElementById("productSKU").value.trim(),
+    specs: document.getElementById("productSpecs").value.trim(),
+    image: selectedImage || (editingProduct ? editingProduct.image || "" : ""),
+    isNew: document.getElementById("isNew").checked,
+    isDiscount: document.getElementById("isDiscount").checked,
+    isFeatured: document.getElementById("isFeatured").checked,
+    status: document.getElementById("productStatus").value,
+    createdAt: editingProduct ? editingProduct.createdAt : new Date().toISOString(),
+    updatedAt: new Date().toISOString()
+
+};
+
+if(editingProduct){
+    const index = products.findIndex(p => p.id === editingProduct.id);
+    if(index >= 0) products[index] = product;
+}else{
+    products.push(product);
+}
+
+localStorage.setItem("laelProducts",JSON.stringify(products));
+localStorage.removeItem("laelEditProductId");
+
+document.getElementById("successMessage").textContent = editingProduct
+    ? "تم تعديل المنتج بنجاح."
+    : "تم حفظ المنتج بنجاح وسيظهر الآن في المتجر.";
+document.getElementById("successMessage").style.display = "block";
+
+if(editingProduct){
+    setTimeout(() => window.location.href = "products.html", 450);
+}else{
+    document.getElementById("productForm").reset();
+    selectedImage = "";
+    document.getElementById("imagePreview").style.display = "none";
+}
+
+window.scrollTo({top:0,behavior:"smooth"});
+
+});
+
+
+// تحميل بيانات المنتج في حالة التعديل
+
+function loadEditProduct(){
+
+if(!editProductId) return;
+
+const products = JSON.parse(localStorage.getItem("laelProducts") || "[]");
+editingProduct = products.find(p => p.id === editProductId) || null;
+
+if(!editingProduct) return;
+
+const set = (id,value) => { const el=document.getElementById(id); if(el) el.value=value ?? ""; };
+
+set("productName",editingProduct.name);
+set("productDescription",editingProduct.description);
+set("productCategory",editingProduct.category);
+set("productBrand",editingProduct.brand);
+set("productPrice",editingProduct.price);
+set("oldPrice",editingProduct.oldPrice);
+set("productStock",editingProduct.stock);
+set("productSKU",editingProduct.sku);
+set("productSpecs",editingProduct.specs);
+set("productStatus",editingProduct.status || "available");
+
+document.getElementById("isNew").checked = !!editingProduct.isNew;
+document.getElementById("isDiscount").checked = !!editingProduct.isDiscount;
+document.getElementById("isFeatured").checked = !!editingProduct.isFeatured;
+
+selectedImage = editingProduct.image || "";
+if(selectedImage){
+    document.getElementById("previewImage").src = selectedImage;
+    document.getElementById("imagePreview").style.display = "block";
+}
+
+const heading = document.querySelector(".top h2, main h1, .page-title");
+if(heading) heading.textContent = "تعديل المنتج";
+
+const save = document.querySelector("button[type='submit']");
+if(save) save.textContent = "حفظ التعديلات";
+
+const success = document.getElementById("successMessage");
+if(success) success.textContent = "قم بتعديل البيانات ثم احفظ التغييرات.";
+
+}
+
+loadEditProduct();
+
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>LAEL IQ | إتمام الطلب</title>
+
+    <link rel="stylesheet" href="../assets/css/style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap"
+          rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/glow.css"></head>
+
+<body>
+
+<header class="navbar">
+
+    <div class="logo">
+        <h1>LAEL IQ</h1>
+        <span>FROM IRAQ TO THE WORLD</span>
+    </div>
+
+    <nav class="nav-links">
+        <a href="index.html">الرئيسية</a>
+        <a href="index.html#products">المتجر</a>
+        <a href="index.html#categories">الفئات</a>
+    </nav>
+
+    <div class="nav-actions">
+
+        <button class="icon-btn cart-btn" type="button">
+            🛒
+        </button>
+
+        <button class="icon-btn favorite-nav-btn" type="button">
+            ♡
+        </button>
+
+    </div>
+
+</header>
+
+
+<main class="checkout-page">
+
+    <div class="checkout-heading">
+
+        <span></span>
+
+        <h1>
+            إتمام <strong>الطلب</strong>
+        </h1>
+
+        <p>
+            أدخل معلوماتك حتى نقدر نوصل طلبك بأمان
+        </p>
+
+    </div>
+
+
+    <div id="checkoutEmpty" class="checkout-empty">
+
+        <div>🛒</div>
+
+        <h2>
+            لا توجد منتجات
+        </h2>
+
+        <p>
+            أضف منتجات إلى السلة أولًا
+        </p>
+
+        <a href="index.html#products">
+            العودة للمتجر
+        </a>
+
+    </div>
+
+
+    <div id="checkoutContent" class="checkout-layout">
+
+        <!-- CUSTOMER FORM -->
+
+        <section class="checkout-form">
+
+            <div class="checkout-card">
+
+                <div class="checkout-card-title">
+
+                    <span>01</span>
+
+                    <div>
+                        <h2>معلومات الزبون</h2>
+                        <p>معلومات التواصل والتوصيل</p>
+                    </div>
+
+                </div>
+
+
+                <div class="form-grid">
+
+                    <div class="form-group">
+
+                        <label>
+                            الاسم الكامل
+                        </label>
+
+                        <input
+                            type="text"
+                            id="customerName"
+                            placeholder="مثال: محمد أحمد">
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>
+                            رقم الهاتف
+                        </label>
+
+                        <input
+                            type="tel"
+                            id="customerPhone"
+                            placeholder="07XXXXXXXXX">
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>
+                            المحافظة
+                        </label>
+
+                        <select id="customerCity">
+
+                            <option value="">
+                                اختر المحافظة
+                            </option>
+
+                            <option>بغداد</option>
+                            <option>البصرة</option>
+                            <option>نينوى</option>
+                            <option>أربيل</option>
+                            <option>السليمانية</option>
+                            <option>دهوك</option>
+                            <option>كركوك</option>
+                            <option>الأنبار</option>
+                            <option>ديالى</option>
+                            <option>صلاح الدين</option>
+                            <option>بابل</option>
+                            <option>كربلاء</option>
+                            <option>النجف</option>
+                            <option>واسط</option>
+                            <option>القادسية</option>
+                            <option>ميسان</option>
+                            <option>ذي قار</option>
+                            <option>المثنى</option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>
+                            المنطقة
+                        </label>
+
+                        <input
+                            type="text"
+                            id="customerArea"
+                            placeholder="المنطقة / القضاء">
+
+                    </div>
+
+
+                    <div class="form-group full">
+
+                        <label>
+                            العنوان بالتفصيل
+                        </label>
+
+                        <input
+                            type="text"
+                            id="customerAddress"
+                            placeholder="الشارع، المحلة، أقرب نقطة دالة">
+
+                    </div>
+
+
+                    <div class="form-group full">
+
+                        <label>
+                            ملاحظات الطلب
+                            <small>(اختياري)</small>
+                        </label>
+
+                        <textarea
+                            id="customerNote"
+                            placeholder="أي ملاحظات تريد إضافتها للطلب..."></textarea>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="checkout-card">
+
+                <div class="checkout-card-title">
+
+                    <span>02</span>
+
+                    <div>
+                        <h2>طريقة الدفع</h2>
+                        <p>اختر طريقة الدفع المناسبة</p>
+                    </div>
+
+                </div>
+
+
+                <div class="payment-methods">
+
+                    <label class="payment-option">
+
+                        <input
+                            type="radio"
+                            name="payment"
+                            value="cash"
+                            checked>
+
+                        <div>
+
+                            <strong>
+                                💵 الدفع عند الاستلام
+                            </strong>
+
+                            <small>
+                                ادفع عند وصول طلبك
+                            </small>
+
+                        </div>
+
+                    </label>
+
+
+                    <label class="payment-option">
+
+                        <input
+                            type="radio"
+                            name="payment"
+                            value="transfer">
+
+                        <div>
+
+                            <strong>
+                                🏦 تحويل إلكتروني
+                            </strong>
+
+                            <small>
+                                سيتم التواصل معك لإكمال الدفع
+                            </small>
+
+                        </div>
+
+                    </label>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ORDER SUMMARY -->
+
+        <aside class="checkout-summary">
+
+            <h2>
+                ملخص طلبك
+            </h2>
+
+
+            <div id="checkoutItems"
+                 class="checkout-items">
+            </div>
+
+
+            <div class="checkout-summary-line">
+
+                <span>
+                    المجموع الفرعي
+                </span>
+
+                <strong id="checkoutSubtotal">
+                    0 IQD
+                </strong>
+
+            </div>
+
+
+            <div class="checkout-summary-line">
+
+                <span>
+                    الشحن
+                </span>
+
+                <strong id="checkoutShipping">
+                    0 IQD
+                </strong>
+
+            </div>
+
+
+            <div class="checkout-divider"></div>
+
+
+            <div class="checkout-total">
+
+                <span>
+                    المجموع النهائي
+                </span>
+
+                <strong id="checkoutTotal">
+                    0 IQD
+                </strong>
+
+            </div>
+
+
+            <button
+                class="confirm-order-btn"
+                onclick="confirmOrder()">
+
+                تأكيد الطلب
+
+                <span>←</span>
+
+            </button>
+
+
+            <div class="checkout-security">
+
+                🔒 معلوماتك محفوظة بأمان
+
+            </div>
+
+
+            <a href="cart.html"
+               class="back-cart">
+
+                ← العودة إلى السلة
+
+            </a>
+
+        </aside>
+
+    </div>
+
+</main>
+
+
+<footer>
+
+    <div class="copyright">
+
+        © 2026 جميع الحقوق محفوظة لـ LAEL IQ
+        — From Iraq To The World
+
+    </div>
+
+</footer>
+
+
+<script src="../assets/js/app.js"></script>
+
+</body>
+</html>

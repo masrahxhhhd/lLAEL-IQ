@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>LAEL IQ | سلة المشتريات</title>
+
+    <link rel="stylesheet" href="../assets/css/style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/glow.css"></head>
+
+<body>
+
+    <!-- NAVBAR -->
+
+    <header class="navbar">
+
+        <div class="logo">
+            <h1>LAEL IQ</h1>
+            <span>FROM IRAQ TO THE WORLD</span>
+        </div>
+
+        <nav class="nav-links">
+
+            <a href="index.html">الرئيسية</a>
+
+            <a href="index.html#products">
+                المتجر
+            </a>
+
+            <a href="index.html#categories">
+                الفئات
+            </a>
+
+        </nav>
+
+        <div class="nav-actions">
+
+            <button class="icon-btn cart-btn" type="button">
+                🛒
+            </button>
+
+            <button class="icon-btn favorite-nav-btn" type="button">
+                ♡
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <!-- CART PAGE -->
+
+    <main class="cart-page">
+
+        <div class="cart-heading">
+
+            <span></span>
+
+            <h1>
+                سلة <strong>المشتريات</strong>
+            </h1>
+
+            <p>
+                راجع منتجاتك قبل إتمام الطلب
+            </p>
+
+        </div>
+
+
+        <div id="emptyCart" class="empty-cart">
+
+            <div class="empty-cart-icon">
+                🛒
+            </div>
+
+            <h2>
+                سلتك فارغة
+            </h2>
+
+            <p>
+                لم تضف أي منتجات إلى السلة حتى الآن
+            </p>
+
+            <a href="index.html#products">
+                ابدأ التسوق
+            </a>
+
+        </div>
+
+
+        <div id="cartContent" class="cart-layout">
+
+            <!-- PRODUCTS -->
+
+            <section class="cart-products">
+
+                <div class="cart-products-header">
+
+                    <h2>
+                        منتجاتك
+                    </h2>
+
+                    <span id="cartItemsCount">
+                        0 منتجات
+                    </span>
+
+                </div>
+
+                <div id="cartItems"></div>
+
+            </section>
+
+
+            <!-- SUMMARY -->
+
+            <aside class="cart-summary">
+
+                <h2>
+                    ملخص الطلب
+                </h2>
+
+                <div class="summary-line">
+
+                    <span>
+                        المجموع الفرعي
+                    </span>
+
+                    <strong id="subtotal">
+                        0 IQD
+                    </strong>
+
+                </div>
+
+                <div class="summary-line">
+
+                    <span>
+                        الشحن
+                    </span>
+
+                    <strong id="shipping">
+                        0 IQD
+                    </strong>
+
+                </div>
+
+                <div class="summary-line discount-line">
+
+                    <span>
+                        الخصم
+                    </span>
+
+                    <strong id="discount">
+                        0 IQD
+                    </strong>
+
+                </div>
+
+                <div class="summary-divider"></div>
+
+                <div class="summary-total">
+
+                    <span>
+                        المجموع الكلي
+                    </span>
+
+                    <strong id="total">
+                        0 IQD
+                    </strong>
+
+                </div>
+
+                <button
+                    class="checkout-btn"
+                    onclick="goToCheckout()">
+
+                    إتمام الطلب
+                    <span>←</span>
+
+                </button>
+
+                <a
+                    href="index.html#products"
+                    class="continue-shopping">
+
+                    ← متابعة التسوق
+
+                </a>
+
+                <div class="secure-cart">
+
+                    🔒
+                    <span>
+                        عملية شراء آمنة وموثوقة
+                    </span>
+
+                </div>
+
+            </aside>
+
+        </div>
+
+    </main>
+
+
+    <footer>
+
+        <div class="copyright">
+
+            © 2026 جميع الحقوق محفوظة لـ LAEL IQ
+            — From Iraq To The World
+
+        </div>
+
+    </footer>
+
+
+    <script src="../assets/js/app.js"></script>
+
+</body>
+
+</html>

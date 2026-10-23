@@ -1,0 +1,460 @@
+/* =====================================================================
+   LAEL IQ  —  GLOW THEME (طبقة التصميم الموحدة)
+   ---------------------------------------------------------------------
+   - يُحمَّل في آخر كل صفحة (موقع + لوحة الأدمن) فيطغى على الستايل القديم.
+   - يحافظ على الأسود والذهبي، ويضيف حدوداً مضيئة للأزرار والبطاقات والحقول.
+   - لا يغيّر الأحجام ولا التخطيط، فقط الحدود والتوهج والحركة.
+   - للتحكم بقوة التوهج غيّر المتغيرات في :root أدناه.
+===================================================================== */
+
+:root{
+    --gold:        #e0ad36;
+    --gold-light:  #f2c54c;
+    --gold-deep:   #c98f17;
+    --gold-rgb:    224,173,54;
+
+    --red:         #ff7777;
+    --red-rgb:     255,90,90;
+    --green:       #6be09a;
+    --green-rgb:   80,200,130;
+
+    --glow-soft:   0 0 10px rgba(var(--gold-rgb),.20);
+    --glow-mid:    0 0 16px rgba(var(--gold-rgb),.38);
+    --glow-strong: 0 0 26px rgba(var(--gold-rgb),.60);
+
+    --glow-ease:   .22s ease;
+}
+
+/* =========================================================
+   1) الأزرار الذهبية المعبّأة (الإجراء الرئيسي)
+========================================================= */
+body .btn-gold,
+body .payment-submit,
+body .auth-submit,
+body .confirm-order-btn,
+body .product-add-cart,
+body .fav-add,
+body .add-product,
+body .add,
+body .save,
+body .btn:not(.dark):not(.red):not(.btn-outline),
+body .email-box button,
+body .add-button{
+    border:1px solid var(--gold-light);
+    box-shadow:
+        0 0 0 1px rgba(var(--gold-rgb),.28),
+        0 0 14px rgba(var(--gold-rgb),.42),
+        inset 0 0 8px rgba(255,255,255,.14);
+    transition:
+        box-shadow var(--glow-ease),
+        transform var(--glow-ease),
+        filter var(--glow-ease),
+        border-color var(--glow-ease);
+}
+
+body .btn-gold:hover,
+body .payment-submit:hover,
+body .auth-submit:hover,
+body .confirm-order-btn:hover,
+body .product-add-cart:hover,
+body .fav-add:hover,
+body .add-product:hover,
+body .add:hover,
+body .save:hover,
+body .btn:not(.dark):not(.red):not(.btn-outline):hover,
+body .email-box button:hover,
+body .add-button:hover{
+    transform:translateY(-1px);
+    filter:brightness(1.06);
+    box-shadow:
+        0 0 0 1px rgba(var(--gold-rgb),.55),
+        0 0 26px rgba(var(--gold-rgb),.70),
+        inset 0 0 10px rgba(255,255,255,.22);
+}
+
+/* =========================================================
+   2) الأزرار ذات الحدود (ثانوية) — حدود ذهبية مضيئة
+========================================================= */
+body .btn-outline,
+body .payment-back,
+body .product-buy-now,
+body .add-cart,
+body .back,
+body .cancel,
+body .btn.dark,
+body .account-edit-button,
+body .account-cancel-button,
+body .auth-tab,
+body .favorite-btn,
+body .product-open,
+body .product-actions button:not(.add-cart),
+body .product-quantity button,
+body .cart-quantity button,
+body .favorite-card-actions button:not(.fav-add):not(.fav-remove){
+    border:1px solid rgba(var(--gold-rgb),.62);
+    box-shadow:
+        0 0 14px rgba(var(--gold-rgb),.30),
+        inset 0 0 10px rgba(var(--gold-rgb),.10);
+    transition:
+        box-shadow var(--glow-ease),
+        border-color var(--glow-ease),
+        color var(--glow-ease),
+        background-color var(--glow-ease),
+        transform var(--glow-ease);
+}
+
+body .btn-outline:hover,
+body .payment-back:hover,
+body .product-buy-now:hover,
+body .add-cart:hover,
+body .back:hover,
+body .cancel:hover,
+body .btn.dark:hover,
+body .account-edit-button:hover,
+body .account-cancel-button:hover,
+body .auth-tab:hover,
+body .auth-tab.active,
+body .favorite-btn:hover,
+body .favorite-btn.active,
+body .product-open:hover,
+body .product-actions button:not(.add-cart):hover,
+body .product-quantity button:hover,
+body .cart-quantity button:hover,
+body .favorite-card-actions button:not(.fav-add):not(.fav-remove):hover{
+    border-color:var(--gold-light);
+    color:var(--gold-light);
+    box-shadow:
+        0 0 0 1px rgba(var(--gold-rgb),.35),
+        0 0 22px rgba(var(--gold-rgb),.55),
+        inset 0 0 14px rgba(var(--gold-rgb),.16);
+}
+
+/* =========================================================
+   3) أزرار الأيقونات والإجراءات الصغيرة
+========================================================= */
+body .icon-btn,
+body .action,
+body .nav-actions a.icon-btn{
+    border:1px solid rgba(var(--gold-rgb),.48);
+    box-shadow:
+        0 0 12px rgba(var(--gold-rgb),.28),
+        inset 0 0 7px rgba(var(--gold-rgb),.08);
+    transition:
+        box-shadow var(--glow-ease),
+        border-color var(--glow-ease),
+        color var(--glow-ease),
+        transform var(--glow-ease);
+}
+
+body .icon-btn:hover,
+body .action:hover{
+    border-color:var(--gold-light);
+    color:var(--gold-light);
+    transform:translateY(-1px);
+    box-shadow:
+        0 0 0 1px rgba(var(--gold-rgb),.30),
+        0 0 18px rgba(var(--gold-rgb),.55),
+        inset 0 0 10px rgba(var(--gold-rgb),.14);
+}
+
+/* =========================================================
+   4) أزرار الخطر (خروج / حذف / إزالة) — توهج أحمر
+========================================================= */
+body .logout,
+body .logout-button,
+body .delete,
+body .fav-remove,
+body .btn.red{
+    border:1px solid rgba(var(--red-rgb),.55);
+    box-shadow:
+        0 0 12px rgba(var(--red-rgb),.18),
+        inset 0 0 8px rgba(var(--red-rgb),.07);
+    transition:
+        box-shadow var(--glow-ease),
+        border-color var(--glow-ease),
+        transform var(--glow-ease);
+}
+
+body .logout:hover,
+body .logout-button:hover,
+body .delete:hover,
+body .fav-remove:hover,
+body .btn.red:hover{
+    border-color:var(--red);
+    box-shadow:
+        0 0 0 1px rgba(var(--red-rgb),.35),
+        0 0 22px rgba(var(--red-rgb),.55),
+        inset 0 0 12px rgba(var(--red-rgb),.14);
+}
+
+/* =========================================================
+   5) البطاقات والصناديق — حدود ذهبية خافتة تتوهج عند المرور
+========================================================= */
+body .product,
+body .category,
+body .feature,
+body .hero-feature,
+body .account-card,
+body .checkout-card,
+body .payment-card,
+body .payment-option,
+body .auth-box,
+body .account-box,
+body .order-card,
+body .favorite-card,
+body .cart-item,
+body .panel,
+body .stat,
+body .mini,
+body .customer-card,
+body .login-box,
+body .newsletter,
+body .order-success,
+body .orders-login-box,
+body .summary-box,
+body .cart-summary,
+body .checkout-summary{
+    border-color:rgba(var(--gold-rgb),.26);
+    box-shadow:
+        0 0 16px rgba(var(--gold-rgb),.12),
+        inset 0 0 18px rgba(var(--gold-rgb),.035);
+    transition:
+        box-shadow .28s ease,
+        border-color .28s ease,
+        transform .28s ease;
+}
+
+body .product:hover,
+body .category:hover,
+body .feature:hover,
+body .hero-feature:hover,
+body .account-card:hover,
+body .payment-option:hover,
+body .favorite-card:hover,
+body .cart-item:hover,
+body .stat:hover,
+body .mini:hover,
+body .customer-card:hover,
+body .order-card:hover{
+    border-color:rgba(var(--gold-rgb),.70);
+    box-shadow:
+        0 0 0 1px rgba(var(--gold-rgb),.18),
+        0 0 26px rgba(var(--gold-rgb),.28),
+        inset 0 0 22px rgba(var(--gold-rgb),.05);
+}
+
+body .category.active,
+body .payment-option.active,
+body .payment-option:has(input:checked){
+    border-color:var(--gold-light);
+    box-shadow:
+        0 0 0 1px rgba(var(--gold-rgb),.40),
+        var(--glow-strong),
+        inset 0 0 20px rgba(var(--gold-rgb),.08);
+}
+
+/* =========================================================
+   6) حقول الإدخال — حدود ذهبية وتوهج عند التركيز
+========================================================= */
+body input:not([type="checkbox"]):not([type="radio"]):not([type="file"]),
+body select,
+body textarea,
+body .search,
+body .filter{
+    border-color:rgba(var(--gold-rgb),.34);
+    box-shadow:inset 0 0 10px rgba(var(--gold-rgb),.04);
+    transition:
+        border-color var(--glow-ease),
+        box-shadow var(--glow-ease),
+        background-color var(--glow-ease);
+}
+
+body input:not([type="checkbox"]):not([type="radio"]):not([type="file"]):hover,
+body select:hover,
+body textarea:hover,
+body .search:hover,
+body .filter:hover{
+    border-color:rgba(var(--gold-rgb),.60);
+}
+
+body input:not([type="checkbox"]):not([type="radio"]):not([type="file"]):focus,
+body select:focus,
+body textarea:focus,
+body .search:focus,
+body .filter:focus{
+    border-color:var(--gold-light);
+    outline:none;
+    box-shadow:
+        0 0 0 3px rgba(var(--gold-rgb),.14),
+        0 0 18px rgba(var(--gold-rgb),.38),
+        inset 0 0 10px rgba(var(--gold-rgb),.06);
+}
+
+body .upload{
+    border-color:rgba(var(--gold-rgb),.45);
+    box-shadow:0 0 14px rgba(var(--gold-rgb),.12);
+    transition:box-shadow var(--glow-ease),border-color var(--glow-ease);
+}
+body .upload:hover{
+    border-color:var(--gold-light);
+    box-shadow:0 0 24px rgba(var(--gold-rgb),.45);
+}
+
+/* القوائم المنسدلة (حالة الطلب) */
+body .status-select{
+    box-shadow:0 0 10px rgba(var(--gold-rgb),.12);
+}
+body .status-select.completed{box-shadow:0 0 12px rgba(var(--green-rgb),.28);}
+body .status-select.cancelled{box-shadow:0 0 12px rgba(var(--red-rgb),.28);}
+body .status-select.pending{box-shadow:0 0 12px rgba(var(--gold-rgb),.30);}
+
+/* =========================================================
+   7) الشريط العلوي والقوائم
+========================================================= */
+body .navbar{
+    border-bottom:1px solid rgba(var(--gold-rgb),.34);
+    box-shadow:0 1px 18px rgba(var(--gold-rgb),.14);
+}
+body .topbar{
+    border-bottom-color:rgba(var(--gold-rgb),.24);
+}
+
+body .nav-links a{
+    transition:color var(--glow-ease),text-shadow var(--glow-ease);
+}
+body .nav-links a:hover,
+body .nav-links a.active,
+body .nav-links .active{
+    text-shadow:0 0 12px rgba(var(--gold-rgb),.75);
+}
+
+/* لوحة الأدمن الجانبية */
+body .sidebar{
+    border-left:1px solid rgba(var(--gold-rgb),.30);
+    box-shadow:-2px 0 22px rgba(var(--gold-rgb),.10);
+}
+body .menu a{
+    border:1px solid transparent;
+    transition:
+        border-color var(--glow-ease),
+        box-shadow var(--glow-ease),
+        color var(--glow-ease),
+        background-color var(--glow-ease);
+}
+body .menu a:hover,
+body .menu a.active{
+    border-color:rgba(var(--gold-rgb),.55);
+    box-shadow:
+        0 0 16px rgba(var(--gold-rgb),.28),
+        inset 0 0 10px rgba(var(--gold-rgb),.08);
+}
+
+/* =========================================================
+   8) الشارات والحالات
+========================================================= */
+body .badge{
+    border:1px solid rgba(var(--green-rgb),.40);
+    box-shadow:0 0 10px rgba(var(--green-rgb),.18);
+}
+body .badge.out{
+    border-color:rgba(var(--red-rgb),.42);
+    box-shadow:0 0 10px rgba(var(--red-rgb),.18);
+}
+body .badge.warn{
+    border-color:rgba(var(--gold-rgb),.45);
+    box-shadow:0 0 10px rgba(var(--gold-rgb),.22);
+}
+body .notice{
+    box-shadow:0 0 14px rgba(var(--gold-rgb),.12);
+}
+body .payment-error.show,
+body .auth-message{
+    box-shadow:0 0 14px rgba(var(--red-rgb),.14);
+}
+
+/* =========================================================
+   9) إمكانية الوصول: إطار تركيز واضح بالكيبورد
+========================================================= */
+body :is(a,button,[role="button"],summary):focus-visible{
+    outline:2px solid var(--gold-light);
+    outline-offset:3px;
+    box-shadow:var(--glow-strong);
+}
+
+/* =========================================================
+   10) الأزرار المعطّلة بدون توهج
+========================================================= */
+body button:disabled,
+body .btn:disabled,
+body [aria-disabled="true"]{
+    box-shadow:none !important;
+    filter:grayscale(.5);
+    opacity:.55;
+    cursor:not-allowed;
+    transform:none !important;
+}
+
+/* =========================================================
+   11) نبضة خفيفة لزر الإجراء الرئيسي في الصفحة الرئيسية
+========================================================= */
+@keyframes laelGlowPulse{
+    0%,100%{box-shadow:0 0 0 1px rgba(var(--gold-rgb),.28),0 0 14px rgba(var(--gold-rgb),.42),inset 0 0 8px rgba(255,255,255,.14);}
+    50%    {box-shadow:0 0 0 1px rgba(var(--gold-rgb),.45),0 0 26px rgba(var(--gold-rgb),.68),inset 0 0 10px rgba(255,255,255,.20);}
+}
+body .buttons .btn-gold{
+    animation:laelGlowPulse 3.2s ease-in-out infinite;
+}
+body .buttons .btn-gold:hover{
+    animation:none;
+}
+
+/* =========================================================
+   12) احترام تفضيل تقليل الحركة
+========================================================= */
+@media (prefers-reduced-motion:reduce){
+    body *,
+    body *::before,
+    body *::after{
+        animation:none !important;
+        transition-duration:.01ms !important;
+    }
+}
+
+/* =========================================================
+   13) الموبايل: توهج أخف لتوفير الأداء
+========================================================= */
+@media (max-width:700px){
+    body .product,
+    body .category,
+    body .panel,
+    body .stat,
+    body .mini{
+        box-shadow:0 0 10px rgba(var(--gold-rgb),.06);
+    }
+    body .buttons .btn-gold{
+        animation:none;
+    }
+}
+
+/* زر الإزالة (×) بدون إطار: توهج نص أحمر فقط عند المرور */
+body .remove-item{transition:color var(--glow-ease),text-shadow var(--glow-ease);}
+body .remove-item:hover{color:var(--red);text-shadow:0 0 12px rgba(var(--red-rgb),.8);}
+
+/* زر الحساب: التوهج على الأيقونة الدائرية فقط */
+body .account-link{border:0;box-shadow:none;}
+body .account-icon{
+    border:1px solid rgba(var(--gold-rgb),.55);
+    box-shadow:0 0 12px rgba(var(--gold-rgb),.28);
+    transition:box-shadow var(--glow-ease),border-color var(--glow-ease);
+}
+body .account-link:hover .account-icon{
+    border-color:var(--gold-light);
+    box-shadow:0 0 22px rgba(var(--gold-rgb),.65);
+}
+
+/* التبويب النشط: نص داكن على الذهبي (تباين واضح) */
+body .auth-tab.active,
+body .auth-tab.active:hover{
+    color:#111;
+    border-color:var(--gold-light);
+}

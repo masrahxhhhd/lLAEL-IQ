@@ -1,0 +1,72 @@
+# ============================================
+# LAEL IQ — .gitignore
+# ============================================
+
+# --------------- OS Files -------------------
+.DS_Store
+.DS_Store?
+._*
+Thumbs.db
+ehthumbs.db
+desktop.ini
+$RECYCLE.BIN/
+*.lnk
+
+# ------------ Editor / IDE Files ------------
+.vscode/
+.idea/
+*.swp
+*.swo
+*.swn
+*~
+*.sublime-project
+*.sublime-workspace
+.project
+.settings/
+.classpath
+*.code-workspace
+
+# ------------ Node Modules -----------------
+node_modules/
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# ----------- Environment Files -------------
+.env
+.env.local
+.env.development
+.env.production
+.env.staging
+.env.*.local
+
+# ------------ Build Output -----------------
+dist/
+build/
+out/
+.cache/
+.parcel-cache/
+
+# --------------- Logs ----------------------
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# ------------ Temp Files -------------------
+*.tmp
+*.temp
+*.bak
+*.orig
+*.pid
+*.seed
+
+# ------------ Coverage ---------------------
+coverage/
+.nyc_output/
+
+# ------------ Misc -------------------------
+*.gz
+*.zip
+*.tar
+*.rar

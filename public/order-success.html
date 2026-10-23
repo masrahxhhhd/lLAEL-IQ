@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>LAEL IQ | تم الطلب</title>
+
+    <link rel="stylesheet" href="../assets/css/style.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap"
+          rel="stylesheet">
+
+<link rel="stylesheet" href="../assets/css/glow.css"></head>
+
+<body>
+
+<header class="navbar">
+
+    <div class="logo">
+
+        <h1>LAEL IQ</h1>
+
+        <span>
+            FROM IRAQ TO THE WORLD
+        </span>
+
+    </div>
+
+</header>
+
+<main class="order-success">
+
+    <div class="success-icon">
+        ✓
+    </div>
+
+    <span class="success-label">
+        LAEL IQ
+    </span>
+
+    <h1>
+        تم استلام <strong>طلبك بنجاح</strong>
+    </h1>
+
+    <p>
+        شكرًا لثقتك بنا.
+        سيتم التواصل معك لتأكيد تفاصيل الطلب.
+    </p>
+
+    <div class="order-number">
+
+        رقم الطلب
+
+        <strong id="orderNumber">
+            LAEL-000000
+        </strong>
+
+    </div>
+
+    <a href="index.html#products">
+        العودة إلى المتجر
+    </a>
+
+</main>
+
+<script>
+    const order = JSON.parse(
+        localStorage.getItem("lastOrder") || "null"
+    );
+
+    if (order && order.id) {
+        document.getElementById("orderNumber").textContent = order.id;
+    }
+</script>
+
+</body>
+</html>
